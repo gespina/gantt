@@ -1,0 +1,24 @@
+<div #mainContainer class="main">
+  <div class="resize-container">
+    <div #resizer class="resizer">
+      <div
+        resizable="left"
+        class="left"
+        (onResize)="handleResize($event)"
+      ></div>
+      <div class="middle" [moveable]="true" (onMove)="handleMove($event)"></div>
+      <div
+        resizable="right"
+        class="right"
+        (onResize)="handleResize($event)"
+      ></div>
+    </div>
+  </div>
+  <div #ganttContainer class="container">
+    <div class="playhead">
+      <span class="timeLabel">{{ timeLabel$ | async }}</span>
+    </div>
+    <ng-content select="cstone-gantt-ruler"></ng-content>
+    <ng-content select="cstone-gantt-row"></ng-content>
+  </div>
+</div>

@@ -1,0 +1,24 @@
+<ng-container
+  *ngTemplateOutlet="
+    templateRef || defaultTrackItemTemplate;
+    context: { $implicit: event }
+  "
+>
+</ng-container>
+<ng-template #defaultTrackItemTemplate let-item>
+  <ng-container *ngIf="item">
+    <div class="content-wrapper">
+      <rux-icon [ngClass]="iconClass" *ngIf="icon" [icon]="icon" size="small"></rux-icon>
+      <div class="content">
+        <div class="top">
+          <div>{{ item.labelLeft }}</div>
+          <div>{{ item.labelRight }}</div>
+        </div>
+        <div class="bottom">
+          <div>{{ item.eventStart | date: 'HH:mm'}}</div>
+          <div>{{ item.eventEnd | date: 'HH:mm' }}</div>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+</ng-template>

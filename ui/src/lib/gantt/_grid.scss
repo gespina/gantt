@@ -1,0 +1,55 @@
+@import 'colors';
+
+.normal {
+  background-color: $gantt-event-normal;
+}
+
+.alarm {
+  background-color: $gantt-event-alarm;
+  border: 2px solid $gantt-event-alarm-border;
+}
+
+.warning {
+  background-color: $gantt-event-warning;
+  border: 2px solid $gantt-event-warning-border;
+}
+
+.iconAlarm {
+  color: $gantt-event-alarm-icon;
+}
+
+.iconWarning {
+  color: $gantt-event-warning-icon;
+}
+
+.row-container {
+  position: relative;
+  display: grid;
+  grid-template-columns: [region] 150px [track] 1fr;
+
+  .row {
+    &__header,
+    &__events {
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid $font-color;
+    }
+
+    &__header {
+      background-color: $gantt-row;
+      grid-column: region;
+      position: sticky;
+      padding: 10px;
+      left: 0;
+      border-right: 1px solid $font-color;
+      min-width: fit-content;
+      z-index: 3;
+    }
+
+    &__events {
+      grid-column: track;
+      min-width: var(--row-width);
+    }
+  }
+
+}

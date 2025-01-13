@@ -1,1 +1,14 @@
-<app-nx-welcome></app-nx-welcome> <router-outlet></router-outlet>
+<cstone-gantt [start]="startDate" [end]="endDate">
+  <cstone-gantt-ruler [timezone]="timezone">
+    <rux-select header size="small">
+      <rux-option value="PST" label="PST"></rux-option>
+      <rux-option value="UTC" label="UTC"></rux-option>
+    </rux-select>
+  </cstone-gantt-ruler>
+  <cstone-gantt-row
+    *ngFor="let row of data | keyvalue"
+    [label]="row.key"
+    [data]="row.value"
+  >
+</cstone-gantt-row>
+</cstone-gantt>

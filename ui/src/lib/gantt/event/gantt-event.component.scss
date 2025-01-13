@@ -1,0 +1,41 @@
+@import '../colors';
+@import '../grid';
+
+:host {
+  // colors
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+  color: $font-color;
+  --warning: $gantt-event-warning-border;
+  --alarm: $gantt-event-alarm-border;
+
+  --row-height: 36px;
+  --padding: 2px;
+
+  position: absolute;
+  min-width: var(--event-width);
+  height: var(--row-height);
+  background-color: var(--bg-color);
+  margin: 0;
+
+  .content-wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-shrink: 0;
+    align-items: center;
+    font-size: 0.75em;
+    height: var(--row-height);
+    padding: var(--padding);
+
+    .content {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+
+      .top,
+      .bottom {
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+  }
+}

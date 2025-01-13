@@ -1,0 +1,17 @@
+$bg-main: var(--cstone-foundation-color-hale-navy, #363C43);
+
+// Gantt Colors
+$gantt-row: var(--cstone-foundation-color-hale-navy, #363C43);
+$gantt-row-alt: var(--cstone-foundation-color-dark-grey, #111111);
+$ruler-bg: var(--cstone-foundation-color-iron-grey, #373737);
+$font-color: #fff;
+
+$gantt-event-normal: var(--color-background-surface-header, #4D5E68);
+$gantt-event-warning: var(--cstone-alerting-color-caution-2, #808553);
+$gantt-event-alarm: var(--cstone-alerting-color-alarm-2, #7C444B);
+
+$gantt-event-warning-border: var(--cstone-alerting-color-caution, #F5DE23);
+$gantt-event-alarm-border: var(--cstone-alerting-color-alarm-2, #E90709);
+
+$gantt-event-warning-icon: var(--cstone-alerting-color-caution, #F5DE23);
+$gantt-event-alarm-icon: var(--cstone-alerting-color-alarm-2, #E90709);

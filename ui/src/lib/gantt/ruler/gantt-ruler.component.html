@@ -1,0 +1,17 @@
+<div class="row-container">
+  <div class="row__header">
+    <ng-content select="[header]"></ng-content>
+  </div>
+  <div #rulerContainer class="ruler-container" [ngClass]="showHours === false ? 'high-ticks' : 'high-low-ticks'">
+    <ul class="ruler">
+      <li *ngFor="let tickDate of tickHours">
+        <div class="date-container">
+          <small *ngIf="showHours">{{ tickDate | dateFormat : 'HH:mm' : timezone}}</small>
+          <small *ngIf="showDate(tickDate)">
+            {{ tickDate | dateFormat : dateFormat : timezone }}
+          </small>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>

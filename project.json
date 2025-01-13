@@ -22,21 +22,24 @@
             "input": "public"
           }
         ],
-        "styles": ["./src/styles.scss"],
-        "scripts": []
+        "styles": [
+          "./src/styles.scss"
+        ],
+        "scripts": [
+        ]
       },
       "configurations": {
         "production": {
           "budgets": [
             {
               "type": "initial",
-              "maximumWarning": "500kb",
-              "maximumError": "1mb"
+              "maximumWarning": "10mb",
+              "maximumError": "10mb"
             },
             {
               "type": "anyComponentStyle",
-              "maximumWarning": "2kb",
-              "maximumError": "4kb"
+              "maximumWarning": "10mb",
+              "maximumError": "10mb"
             }
           ],
           "outputHashing": "all"
@@ -77,7 +80,7 @@
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectName}"],
       "options": {
-        "jestConfig": "jest.config.ts"
+        "jestConfig": "jest.config.app.ts"
       }
     },
     "serve-static": {

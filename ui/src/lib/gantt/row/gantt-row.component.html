@@ -1,0 +1,19 @@
+<div class="row-container">
+  <div class="row__header" >
+    <ng-container
+      *ngTemplateOutlet="
+        labelRef || defaultLabelTemplate;
+        context: { $implicit: label }
+      "
+    >
+    </ng-container>
+    <ng-template #defaultLabelTemplate let-lbl>
+      <div>{{ lbl }}</div>
+    </ng-template>
+  </div>
+  <div class="row__events">
+    <div [ngStyle]="played"></div>
+    <cstone-gantt-event *ngFor="let item of data" [event]="item" [templateRef]="trackItemRef">
+    </cstone-gantt-event>
+  </div>
+</div>

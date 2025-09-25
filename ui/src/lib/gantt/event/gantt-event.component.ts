@@ -18,6 +18,11 @@ const Icon: any = {
   Alarm: { icon: 'error', iconClass: 'iconAlarm' },
 };
 
+const StateBg: any = {
+  Normal: 'normal',
+  Warning: 'warning',
+  Alarm: 'alarm'
+}
 
 const diffMinutes = (eventStart: Date, eventEnd: Date) =>
   Interval.fromDateTimes(
@@ -26,13 +31,13 @@ const diffMinutes = (eventStart: Date, eventEnd: Date) =>
   ).toDuration('minutes').minutes;
 
 @Component({
-  selector: 'cstone-gantt-event',
+  selector: 'sey-gantt-event',
   standalone: true,
   imports: [CommonModule, AstroComponentsModule],
   templateUrl: './gantt-event.component.html',
   styleUrls: ['./gantt-event.component.scss'],
 })
-export class CstoneGanttEventComponent<T extends EventType> implements OnInit {
+export class SeyGanttEventComponent<T extends EventType> implements OnInit {
   @Input()
   public event!: T | any;
 
@@ -51,6 +56,14 @@ export class CstoneGanttEventComponent<T extends EventType> implements OnInit {
     }
   }
 
+  get top() {
+    return {
+      "top-normal": this.event.state === 'Normal',
+      "top-warning": this.event.state === 'Warning',
+      "top-alarm": this.event.state === 'Alarm'
+    }
+  }
+  
   get icon() {
     const { state } = this.event;
     return Icon[state].icon;
@@ -80,6 +93,14 @@ export class CstoneGanttEventComponent<T extends EventType> implements OnInit {
     );
   }
 
+  get isInRange() {
+    const eventStartDate = DateTime.fromJSDate(this.event.eventStart);
+    const chartStart = DateTime.fromJSDate(this.service.startDate);
+    const eventEndDate = DateTime.fromJSDate(this.event.eventEnd);
+    const chartEnd = DateTime.fromJSDate(this.service.endDate);
+    return eventStartDate >= chartStart && eventEndDate <= chartEnd;
+  }
+
   @HostBinding('style.--event-width.px')
   get eventWidth() {
     return this.eventDuration * this.service.pxPerMinute;
@@ -89,6 +110,11 @@ export class CstoneGanttEventComponent<T extends EventType> implements OnInit {
   get eventStart() {
     return 150 + (this.minutesFromChartStart * this.service.pxPerMinute);
   }
+ 
+  showDates() {
+    return this.eventWidth > 100;
+  }
+
   constructor(public service: GanttService) {}
 
   ngOnInit(): void {

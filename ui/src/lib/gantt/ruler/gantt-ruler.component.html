@@ -2,7 +2,11 @@
   <div class="row__header">
     <ng-content select="[header]"></ng-content>
   </div>
-  <div #rulerContainer class="ruler-container" [ngClass]="showHours === false ? 'high-ticks' : 'high-low-ticks'">
+  <div
+    #rulerContainer
+    class="ruler-container"
+    [ngClass]="showHours === false ? 'high-ticks' : 'high-low-ticks'"
+  >
     <ul class="ruler">
       <li *ngFor="let tickDate of tickHours">
         <div class="date-container">

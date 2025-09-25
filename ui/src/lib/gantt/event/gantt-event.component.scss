@@ -9,7 +9,7 @@
   --alarm: $gantt-event-alarm-border;
 
   --row-height: 36px;
-  --padding: 2px;
+  --padding: 1px;
 
   position: absolute;
   min-width: var(--event-width);
@@ -25,6 +25,7 @@
     font-size: 0.75em;
     height: var(--row-height);
     padding: var(--padding);
+    background-color: gray;
 
     .content {
       width: 100%;
@@ -35,6 +36,14 @@
       .bottom {
         display: flex;
         justify-content: space-between;
+      }
+
+      .top {
+        align-items: start;
+      }
+
+      .bottom {
+        align-items: end;
       }
     }
   }

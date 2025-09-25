@@ -37,7 +37,7 @@ export class TickMarkPipe implements PipeTransform {
 export type TimeZone = "UTC" | "America/Los_Angeles";
 
 @Component({
-  selector: 'cstone-gantt-ruler',
+  selector: 'sey-gantt-ruler',
   standalone: true,
   imports: [
     CommonModule,
@@ -48,7 +48,7 @@ export type TimeZone = "UTC" | "America/Los_Angeles";
   templateUrl: './gantt-ruler.component.html',
   styleUrls: ['./gantt-ruler.component.scss']
 })
-export class CstoneGanttRulerComponent {
+export class SeyGanttRulerComponent {
 
   @ViewChild('rulerContainer', { static: false })
   rulerContainer: ElementRef | undefined;

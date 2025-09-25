@@ -5,6 +5,7 @@ import {
   Component,
   ElementRef,
   HostBinding,
+  HostListener,
   Input,
   ViewChild,
 } from '@angular/core';
@@ -15,14 +16,14 @@ import { ResizeDirective } from './directives/resize.directive';
 import { IResize } from './interfaces/resize';
 
 @Component({
-  selector: 'cstone-gantt',
+  selector: 'sey-gantt',
   standalone: true,
   imports: [CommonModule, ResizeDirective],
   templateUrl: './gantt.component.html',
   styleUrls: ['./gantt.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class CstoneGanttComponent implements AfterViewInit {
+export class SeyGanttComponent implements AfterViewInit {
   /**
    * Start date of the gantt chart.  Usually the earliest start date from the events data
    */
@@ -68,8 +69,22 @@ export class CstoneGanttComponent implements AfterViewInit {
   @ViewChild(ResizeDirective)
   resizeDirective!: ResizeDirective;
 
+  windowWidth: number = window.innerWidth;
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: Event) {
+    // this.windowWidth = (event.target as Window).innerWidth;
+    // console.log({"window resized": this.windowWidth, offsetWidth: this.mainContainer?.nativeElement.offsetWidth})
+
+    // this.service.updateState({
+      // width: this.mainContainer?.nativeElement.offsetWidth - 150,
+      // visibleWidth: this.mainContainer?.nativeElement.offsetWidth - 150,
+    // });
+  }
+
   @HostBinding('style.--gantt-visible-width.px')
   get visibleWidth() {
+    // console.log({visibleWidth: this.service.resizeState.visibleWidth})
     return this.service.resizeState.visibleWidth;
   }
 
@@ -162,7 +177,19 @@ export class CstoneGanttComponent implements AfterViewInit {
       let {
         resizeState: { offsetLeft, left, width, visibleWidth },
         zoomFactor,
+        zoom,
       } = this.service;
+      console.log({
+        zoom,
+        offsetLeft,
+        movementX,
+        'offsetLeft + movementX': offsetLeft + movementX,
+      });
+      console.log({
+        visibleWidth,
+        width,
+        'visibleWidth - width': visibleWidth - width,
+      });
       offsetLeft = Math.max(
         0,
         Math.min(offsetLeft + movementX, visibleWidth - width)
@@ -172,6 +199,7 @@ export class CstoneGanttComponent implements AfterViewInit {
         left: left + movementX,
       });
       let scrollTo = this.service.resizeState.offsetLeft * zoomFactor;
+      // console.log({ offsetLeft, scrollTo });
       this.mainContainer.nativeElement.scrollTo({
         left: scrollTo,
         behavior: 'smooth',

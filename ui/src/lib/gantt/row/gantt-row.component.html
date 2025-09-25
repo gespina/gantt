@@ -1,5 +1,5 @@
 <div class="row-container">
-  <div class="row__header" >
+  <div class="row__header">
     <ng-container
       *ngTemplateOutlet="
         labelRef || defaultLabelTemplate;
@@ -13,7 +13,9 @@
   </div>
   <div class="row__events">
     <div [ngStyle]="played"></div>
-    <cstone-gantt-event *ngFor="let item of data" [event]="item" [templateRef]="trackItemRef">
-    </cstone-gantt-event>
+    @for(item of data; track item.eventStart){
+    <sey-gantt-event [event]="item" [templateRef]="trackItemRef">
+    </sey-gantt-event>
+    }
   </div>
 </div>

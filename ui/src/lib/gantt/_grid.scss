@@ -1,17 +1,33 @@
 @import 'colors';
 
 .normal {
-  background-color: $gantt-event-normal;
+  // background-color: $gantt-event-normal;
+  border-top: 2px solid $gantt-event-normal;
 }
 
 .alarm {
-  background-color: $gantt-event-alarm;
+  // background-color: $gantt-event-alarm;
   border: 2px solid $gantt-event-alarm-border;
 }
 
 .warning {
-  background-color: $gantt-event-warning;
-  border: 2px solid $gantt-event-warning-border;
+  // background-color: $gantt-event-warning;
+  border-top: 2px solid $gantt-event-warning;
+}
+
+.top-normal {
+  // background-color: $gantt-event-normal;
+  border-top: 2px solid $gantt-event-normal;
+}
+
+.top-alarm {
+  // background-color: $gantt-event-alarm;
+  border: 2px solid $gantt-event-alarm-border;
+}
+
+.top-warning {
+  // background-color: $gantt-event-warning;
+  border-top: 2px solid $gantt-event-warning;
 }
 
 .iconAlarm {

@@ -7,5 +7,6 @@ export type EventType = {
     eventStart: Date;
     eventEnd: Date;
     state: string;
+    icon?: string;
   }
   

@@ -7,7 +7,6 @@
   height: 42px;
   color: $font-color;
   background-color: $gantt-row;
-  // width: var(--row-width);
 
   &:nth-child(even) {
     background-color: $gantt-row-alt

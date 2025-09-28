@@ -16,6 +16,14 @@ const Icon: any = {
   Normal: { icon: undefined, iconClass: undefined },
   Warning: { icon: 'warning', iconClass: 'iconWarning' },
   Alarm: { icon: 'error', iconClass: 'iconAlarm' },
+  VALIDATED: { icon: 'check-box', iconClass: undefined},
+  REQUESTED: { icon: 'directions', iconClass: undefined},
+  CANCELLED: { icon: 'cancel', iconClass: undefined},
+  SCHEDULED: { icon: 'insert-invitation', iconClass: undefined},
+  EXECUTING: { icon: 'directions-run', iconClass: undefined},
+  DOWNLINKED: { icon: 'vertical-align-bottom', iconClass: undefined},
+  PROCESSING: { icon: 'autorenew', iconClass: undefined},
+  COMPLETE: { icon: 'check-circle', iconClass: undefined},
 };
 
 const StateBg: any = {
@@ -56,17 +64,17 @@ export class SeyGanttEventComponent<T extends EventType> implements OnInit {
     }
   }
 
-  get top() {
+  get topRight() {
     return {
-      "top-normal": this.event.state === 'Normal',
-      "top-warning": this.event.state === 'Warning',
-      "top-alarm": this.event.state === 'Alarm'
+      "normal-bg": this.event.state === 'Normal',
+      "warning-bg": this.event.state === 'Warning',
+      "alarm-bg": this.event.state === 'Alarm'
     }
   }
-  
+ 
   get icon() {
-    const { state } = this.event;
-    return Icon[state].icon;
+    const { labelRight } = this.event;
+    return Icon[labelRight].icon;
   }
 
   get iconClass() {

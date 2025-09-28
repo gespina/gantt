@@ -84,7 +84,6 @@ export class SeyGanttComponent implements AfterViewInit {
 
   @HostBinding('style.--gantt-visible-width.px')
   get visibleWidth() {
-    // console.log({visibleWidth: this.service.resizeState.visibleWidth})
     return this.service.resizeState.visibleWidth;
   }
 

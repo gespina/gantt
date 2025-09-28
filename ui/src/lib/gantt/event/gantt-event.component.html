@@ -8,19 +8,17 @@
 <ng-template #defaultTrackItemTemplate let-item>
   <ng-container *ngIf="item">
     <div class="content-wrapper">
-      <rux-icon [ngClass]="iconClass" *ngIf="icon" [icon]="icon" size="small"></rux-icon>
-      <div class="content">
-        <div class="top" [ngClass]="top">
-          <div>{{ item.labelLeft }}</div>
-          <div>{{ item.labelRight }}</div>
-        </div>
-        <div class="bottom">
-          @if(showDates()){
-          <div>{{ item.eventStart | date: 'HH:mm'}}</div>
-          <div>{{ item.eventEnd | date: 'HH:mm' }}</div>
-          }
-        </div>
-      </div>
+      <rux-icon
+        class="icon"
+        [ngClass]="iconClass"
+        *ngIf="icon"
+        [icon]="icon"
+        size="small"
+      ></rux-icon>
+      <div class="top-left"><span class="top-left__label">Event ID: </span>{{ item.labelLeft }}</div>
+      <div class="top-right" [ngClass]="topRight">{{ item.labelRight }}</div>
+      <div class="bottom-left">{{ item.eventStart | date : 'HH:mm'  }}</div>
+      <div class="bottom-right">{{ item.eventEnd | date : 'HH:mm'  }}</div>
     </div>
   </ng-container>
 </ng-template>

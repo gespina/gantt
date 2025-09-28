@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { NxWelcomeComponent } from './nx-welcome.component';
 import { SeyGanttComponent, SeyGanttRowComponent, SeyGanttRulerComponent, TimeZone } from 'ui/src';
 import { DateTime } from 'luxon';
 import { KeyValuePipe, NgFor } from '@angular/common';
@@ -9,7 +8,6 @@ import { AstroComponentsModule } from "@astrouxds/angular";
 @Component({
   standalone: true,
   imports: [
-    NxWelcomeComponent,
     RouterModule,
     SeyGanttComponent,
     SeyGanttRowComponent,
@@ -33,14 +31,14 @@ export class AppComponent {
   public data = {
     'Region 1': [
       {
-        labelLeft: 'Event ID: ABC',
+        labelLeft: 'ABC',
         labelRight: 'REQUESTED',
         eventStart: this.testStartDate.plus({ minutes: 20 }).toJSDate(),
         eventEnd: this.testStartDate.plus({ hours: 2, minutes: 30 }).toJSDate(),
         state: 'Warning',
       },
       {
-        labelLeft: 'EventID: XYZ',
+        labelLeft: 'XYZ',
         labelRight: 'CANCELLED',
         eventStart: this.testStartDate.plus({ hours: 5, minutes: 20 }).toJSDate(),
         eventEnd: this.testStartDate.plus({ hours: 6, minutes: 20 }).toJSDate(),
@@ -49,7 +47,7 @@ export class AppComponent {
     ],
     'Region 2': [
       {
-        labelLeft: 'Event ID: DEF',
+        labelLeft: 'DEF',
         labelRight: 'VALIDATED',
         eventStart: this.testStartDate.plus({ hours: 2, minutes: 20 }).toJSDate(),
         eventEnd: this.testStartDate.plus({ hours: 3, minutes: 30 }).toJSDate(),
@@ -57,14 +55,14 @@ export class AppComponent {
       },
       {
 
-        labelLeft: 'Event ID: IJK',
+        labelLeft: 'IJK',
         labelRight: 'EXECUTING',
         eventStart: this.testStartDate.plus({ hours: 7, minutes: 20 }).toJSDate(),
         eventEnd: this.testStartDate.plus({ hours: 8, minutes: 30 }).toJSDate(),
-        state: 'Alarm',
+        state: 'Warning',
       },
       {
-        labelLeft: 'Event ID: LMNOP',
+        labelLeft: 'LMNOP',
         labelRight: 'DOWNLINKED',
         eventStart: this.testStartDate.minus({ hours: 0, minutes: 10 }).toJSDate(),
         eventEnd: this.testStartDate.plus({ hours: 1, minutes: 30 }).toJSDate(),
@@ -73,24 +71,25 @@ export class AppComponent {
     ],
     'Region 3': [
       {
-        labelLeft: 'Event ID: GGG',
+        labelLeft: 'GGG',
         labelRight: 'PROCESSING',
         eventStart: this.testStartDate.plus({ hours: 1, minutes: 20 }).toJSDate(),
         eventEnd: this.testStartDate.plus({ hours: 2, minutes: 10 }).toJSDate(),
         state: 'Normal',
       },
       {
-        labelLeft: 'Event ID: MMM',
+        labelLeft: 'MMM',
         labelRight: 'COMPLETE',
         eventStart: this.testStartDate.plus({ hours: 9, minutes: 40 }).toJSDate(),
         eventEnd: this.testStartDate.plus({ hours: 10, minutes: 30 }).toJSDate(),
-        state: 'Alarm',
+        state: 'Warning',
       },
       {
-        labelLeft: 'Event ID: WEE',
+        labelLeft: 'WEE',
+        labelRight: 'SCHEDULED',
         eventStart: this.testStartDate.minus({ minutes: 15 }).toJSDate(),
         eventEnd: this.testStartDate.plus({ minutes: 30 }).toJSDate(),
-        state: 'Alarm',
+        state: 'Normal',
       },
     ],
   };

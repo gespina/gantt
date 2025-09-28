@@ -1,42 +1,31 @@
 @import 'colors';
 
 .normal {
-  // background-color: $gantt-event-normal;
   border-top: 2px solid $gantt-event-normal;
 }
-
+.normal-bg {
+  background-color: $gantt-event-normal;
+}
 .alarm {
-  // background-color: $gantt-event-alarm;
-  border: 2px solid $gantt-event-alarm-border;
+  border: 2px solid $gantt-event-alarm;
+}
+.alarm-bg {
+  background-color: $gantt-event-alarm;
 }
 
 .warning {
-  // background-color: $gantt-event-warning;
   border-top: 2px solid $gantt-event-warning;
 }
-
-.top-normal {
-  // background-color: $gantt-event-normal;
-  border-top: 2px solid $gantt-event-normal;
+.warning-bg {
+  background-color: $gantt-event-warning;
 }
-
-.top-alarm {
-  // background-color: $gantt-event-alarm;
-  border: 2px solid $gantt-event-alarm-border;
-}
-
-.top-warning {
-  // background-color: $gantt-event-warning;
-  border-top: 2px solid $gantt-event-warning;
-}
-
 .iconAlarm {
   color: $gantt-event-alarm-icon;
 }
 
-.iconWarning {
-  color: $gantt-event-warning-icon;
-}
+// .iconWarning {
+//   color: $gantt-event-warning-icon;
+// }
 
 .row-container {
   position: relative;

@@ -1,17 +1,18 @@
-$bg-main: var(--cstone-foundation-color-hale-navy, #363C43);
+$bg-main: var(--sey-foundation-color-hale-navy, #6e6e6e);
 
 // Gantt Colors
-$gantt-row: var(--cstone-foundation-color-hale-navy, #363C43);
-$gantt-row-alt: var(--cstone-foundation-color-dark-grey, #111111);
-$ruler-bg: var(--cstone-foundation-color-iron-grey, #373737);
+$gantt-row: var(--sey-foundation-color-hale-navy, #111111);
+$gantt-row-alt: var(--sey-foundation-color-charcoal-grey, #262626);
+$ruler-bg: var(--sey-foundation-color-iron-grey, #0b5a71);
 $font-color: #fff;
 
-$gantt-event-normal: var(--color-background-surface-header, #4D5E68);
-$gantt-event-warning: var(--cstone-alerting-color-caution-2, #808553);
-$gantt-event-alarm: var(--cstone-alerting-color-alarm-2, #7C444B);
+$gantt-event-bg: var(--sey-foundation-color-steel-grey, #4d5e68);
+$gantt-event-normal: var(--sey-foundation-color-grey, #6e6e6e);
+$gantt-event-warning: var(--sey-foundation-color-yellow-2, #87720a);
+$gantt-event-alarm: var(--sey-alerting-color-red, #87720a);
 
-$gantt-event-warning-border: var(--cstone-alerting-color-caution, #F5DE23);
-$gantt-event-alarm-border: var(--cstone-alerting-color-alarm-2, #E90709);
+$gantt-event-warning-border: var(--sey-alerting-color-caution, #F5DE23);
+$gantt-event-alarm-border: var(--sey-alerting-color-alarm-2, #E90709);
 
-$gantt-event-warning-icon: var(--cstone-alerting-color-caution, #F5DE23);
-$gantt-event-alarm-icon: var(--cstone-alerting-color-alarm-2, #E90709);
+$gantt-event-warning-icon: var(--sey-alerting-color-caution, #F5DE23);
+$gantt-event-alarm-icon: var(--sey-alerting-color-red, #87720a);

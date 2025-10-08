@@ -1,5 +1,5 @@
 <div #mainContainer class="main">
-  <div class="resize-container">
+  <!-- <div class="resize-container">
     <div #resizer class="resizer">
       <div
         resizable="left"
@@ -13,7 +13,8 @@
         (onResize)="handleResize($event)"
       ></div>
     </div>
-  </div>
+  </div> -->
+  <sey-gantt-scroll-bar></sey-gantt-scroll-bar>
   <div #ganttContainer class="container">
     <div class="playhead">
       <span class="timeLabel">{{ timeLabel$ | async }}</span>

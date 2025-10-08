@@ -1,0 +1,19 @@
+<div
+    cdkDrag
+    [cdkDragFreeDragPosition]="{x: scrollBar.x}"
+    (cdkDragEnded)="onDragEnded($event)"
+    class="draggable-box"
+    [style.width.px]="scrollBar.width">
+
+    <!-- Drag Handle -->
+    <div class="drag-handle" cdkDragHandle>
+        <span>⋮⋮</span>
+    </div>
+
+    <div class="resize-handle resize-left"
+        (mousedown)="startResize($event, 'left')"
+    ></div>
+    <div class="resize-handle resize-right"
+        (mousedown)="startResize($event, 'right')"
+    ></div>    
+</div>
